@@ -1,0 +1,233 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #141414; /* Fondo oscuro como Netflix */
+    color: #fff; /* Texto blanco */
+    padding-top: 56px; /* Ajuste para el header fijo de Bootstrap */
+}
+
+header {
+    background-color: transparent !important; /* Inicialmente transparente */
+    color: #fff;
+    transition: background-color 0.5s ease-in-out; /* Transición suave del fondo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 0.5rem 1rem; /* Añadir algo de padding al header */
+}
+
+header .container-fluid {
+    padding: 0; /* Eliminar padding del container-fluid para controlar el espaciado */
+}
+
+header h1 {
+    font-size: 2em;
+    color: #e50914; /* Rojo Netflix */
+    margin-bottom: 0; /* Eliminar margen inferior del título */
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+}
+
+header > div > div:last-child {
+    display: flex;
+    align-items: center;
+}
+
+header a {
+    color: #e5e5e5;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+header .dropdown {
+    display: flex; /* Convertir el dropdown en un contenedor flex */
+    align-items: center; /* Alinear verticalmente los elementos dentro del dropdown */
+}
+
+header .dropdown > a {
+    display: flex; /* Convertir el enlace del dropdown en un contenedor flex */
+    align-items: center; /* Alinear verticalmente la imagen y la flecha */
+    text-decoration: none; /* Opcional: quitar el subrayado del enlace */
+    color: #fff; /* Asegurar que el color del texto sea blanco si lo hubiera */
+}
+
+header .dropdown-menu {
+    right: 0 !important; /* Asegurar que el menú desplegable aparezca a la derecha */
+    left: auto !important; /* Anular cualquier alineación a la izquierda */
+}
+
+/* Clase para hacer el header transparente */
+.header-transparent {
+    background-color: transparent !important;
+}
+
+.main-background {
+    background-color: #222; /* Un fondo oscuro por defecto */
+    background-image: url('https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=80'); /* Imagen de fondo por defecto (reemplázala con la que quieras) */
+    background-size: cover;
+    background-position: center top;
+    padding-top: 100px; /* Reducir el padding superior */
+    padding-bottom: 150px; /* Aumentar el padding inferior para el degradado */
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido al final */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    height: auto; /* Altura automática por defecto */
+}
+
+.main-background::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px; /* Altura del degradado */
+    background: linear-gradient(to top, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0)); /* Degradado oscuro a transparente */
+    z-index: 1; /* Asegura que esté sobre la imagen de fondo */
+}
+
+.fixed-info {
+    position: relative; /* Cambiado a relative para que se alinee con el flex del padre */
+    padding: 40px; /* Aumentar el padding */
+    z-index: 2; /* Asegura que esté sobre el degradado */
+    max-width: 50%; /* Ajustar el ancho máximo */
+}
+
+.fixed-info h2 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.fixed-info p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.fixed-info .btn {
+    padding: 10px 20px; /* Ajustar el padding de los botones */
+    font-size: 1em;
+}
+
+.fixed-info .btn-danger {
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.tv-ma {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    top: 20px;
+    right: 20px;
+    z-index: 3; /* Asegura que esté sobre otros elementos */
+}
+
+section {
+    padding-top: 30px; /* Aumentar el padding superior */
+    padding-bottom: 30px; /* Aumentar el padding inferior */
+}
+
+section h2 {
+    color: #fff;
+    margin-bottom: 25px; /* Aumentar el margen inferior */
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    display: block;
+}
+
+.badge-danger {
+    background-color: #e50914;
+}
+
+.header-scrolled {
+    background-color: #000 !important; /* Fondo negro al hacer scroll */
+}
+
+.main-background.expanded {
+    align-items: flex-start; /* El contenido se alinea desde la parte superior */
+    padding-bottom: 0; /* Eliminar el padding inferior para el degradado */
+    height: 90vh; /* O la altura que desees para la expansión */
+}
+
+.main-background.expanded::before {
+    display: none; /* Ocultar el degradado cuando está expandido */
+}
+
+.main-background.expanded .fixed-info {
+    max-width: 100%; /* El texto puede ocupar más ancho */
+    padding: 80px 40px; /* Aumentar el padding para más espacio */
+    position: relative; /* Asegura que el texto esté sobre el tráiler */
+    z-index: 3; /* Asegura que el texto esté sobre el degradado */
+}
+
+.main-background.expanded .trailer-container {
+    display: block !important;
+    position: absolute; /* Cubrir todo el fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Debajo del texto y el overlay de no interacción */
+}
+
+.main-background.expanded .trailer-container iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubrir el contenedor manteniendo la proporción */
+    pointer-events: none; /* Evita la interacción con el iframe */
+}
+
+/* Estilos para los botones de control del tráiler (ahora ocultos) */
+.trailer-controls {
+    display: none;
+}
+
+/* Overlay para evitar interacción y ocultar controles */
+.trailer-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.01); /* Un color casi transparente */
+    z-index: 1; /* Asegura que esté sobre el iframe */
+    pointer-events: none; /* Evita la interacción con este overlay */
+}
+
+/* Degradado en la parte inferior del contenedor del tráiler */
+.trailer-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Ajusta la altura del difuminado según necesites */
+    background: linear-gradient(to top, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0)); /* Degradado de oscuro a transparente */
+    z-index: 2; /* Asegura que esté sobre el iframe y debajo del texto fijo */
+    pointer-events: none; /* Evita la interacción con el degradado */
+}
+
+/* Estilos para la vista de galería (por defecto) */
+.gallery-item {
+    display: block;
+}

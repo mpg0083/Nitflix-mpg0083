@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitflix</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="bg-dark text-white py-2 fixed-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+            <h1 class="m-0">NITFLIX</h1>
+            <div>
+                <a href="#" class="text-white mr-3">Inicio</a>
+                <a href="#" class="text-white mr-3">Series</a>
+                <a href="#" class="text-white mr-3">Películas</a>
+                <a href="#" class="text-white mr-3">Populares</a>
+                <a href="#" class="text-white mr-3">Mi lista</a>
+            </div>
+            <div>
+                <a href="#"><span class="text-white mr-3">Buscar</span></a>
+                <a href="#"><span class="text-white mr-3">DVD</span></a>
+                <a href="#"><span class="text-white mr-3">Notificaciones</span></a>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=80" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#">Cambiar de cuenta</a>
+                        <a class="dropdown-item" href="#">Ajustes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-3 px-4">
+            <div class="d-flex align-items-center">
+                <h2 class="mr-4">Series</h2>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        gneros
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Acción</a>
+                        <a class="dropdown-item" href="#">Comedia</a>
+                        <a class="dropdown-item" href="#">Drama</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-background position-relative d-flex align-items-end">
+        <div class="fixed-info text-white p-4">
+            <h2 id="main-title" class="mb-3">Título Principal</h2>
+            <p id="main-description" class="mb-2">Descripción principal que se actualizará al hacer clic en las miniaturas.</p>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-danger mr-3">Reproducir</button>
+                <button class="btn btn-outline-light">Más información</button>
+            </div>
+        </div>
+        <div class="trailer-container position-absolute top-0 left-0 w-100 h-100 overflow-hidden" style="display: none; z-index: 0;">
+            <iframe id="trailer-frame" width="100%" height="100%" src="" frameborder="0" allow="autoplay; fullscreen; muted; loop" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <section class="container-fluid mt-5 px-4" id="movies-section">
+        <h2>Mi lista</h2>
+        <div class="row row-cols-md-3" id="movies-container">
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Cobra Kai"
+                 data-description="La saga Karate Kid continúa..."
+                 data-duration="3 temporadas"
+                 data-background="https://simdokht.com/wp-content/uploads/2024/05/cobra-kai-netflix-poster-art-1.jpg"
+                 data-trailer="https://www.youtube.com/embed/CfOuYm8EnBA?si=Zi22i30mPecqzhGU">
+                <div class="card bg-dark border-0">
+                    <img src="https://simdokht.com/wp-content/uploads/2024/05/cobra-kai-netflix-poster-art-1.jpg" class="card-img-top" alt="Cobra Kai">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">NUEVA TEMPORADA</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Outlander"
+                 data-description="Una enfermera de combate de 1945..."
+                 data-duration="6 temporadas"
+                 data-background="https://images.ecestaticos.com/bldys_4toC-8WdvKELQW-25HyJk=/0x116:2249x1382/1600x900/filters:fill(white):format(jpg)/https://f.elconfidencial.com/original/714/16a/3d2/71416a3d29ddf73b7cb7f6d476e99a2d.jpg"
+                 data-trailer="https://www.youtube.com/embed/5JRjjUTbr94?si=3t_d9dwIjmhaYFkz">
+                <div class="card bg-dark border-0">
+                    <img src="https://images.ecestaticos.com/bldys_4toC-8WdvKELQW-25HyJk=/0x116:2249x1382/1600x900/filters:fill(white):format(jpg)/https://f.elconfidencial.com/original/714/16a/3d2/71416a3d29ddf73b7cb7f6d476e99a2d.jpg" class="card-img-top" alt="Outlander">
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Emily in Paris"
+                 data-description="Una joven ambiciosa de Chicago..."
+                 data-duration="3 temporadas"
+                 data-background="https://www.los40.com.gt/wp-content/uploads/2022/08/p18761121_b_h8_ak-e1661788160842.jpg"
+                 data-trailer="https://www.youtube.com/embed/lptctjAT-Mk?si=A_Q2UwI1VTrw0xVp">
+                <div class="card bg-dark border-0">
+                    <img src="https://www.los40.com.gt/wp-content/uploads/2022/08/p18761121_b_h8_ak-e1661788160842.jpg" class="card-img-top" alt="Emily in Paris">
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Babylon Berlin"
+                 data-description="Berlín, años 20: una ciudad de excesos..."
+                 data-duration="4 temporadas"
+                 data-background="https://www.hollywoodreporter.com/wp-content/uploads/2024/06/Babylon-Berlin-Image-Title.jpg?w=1600&h=900&crop=1"
+                 data-trailer="https://www.youtube.com/embed/Q5eorwxcIuU?si=QSy-11Lm4DYGnIWD">
+                <div class="card bg-dark border-0">
+                    <img src="https://www.hollywoodreporter.com/wp-content/uploads/2024/06/Babylon-Berlin-Image-Title.jpg?w=1600&h=900&crop=1" class="card-img-top" alt="Babylon Berlin">
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-4">Dramas de TV</h2>
+        <div class="row row-cols-md-4" id="dramas-container">
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Partner Track"
+                 data-description="En un bufete de élite de Nueva York..."
+                 data-duration="1 temporada"
+                 data-background="https://ntvb.tmsimg.com/assets/p22717540_b_h8_aa.jpg?w=960&h=540"
+                 data-trailer="https://www.youtube.com/embed/1Qcm1UMjjoU?si=9PG_Ack8DoP8TWLI">
+                <div class="card bg-dark border-0">
+                    <img src="https://ntvb.tmsimg.com/assets/p22717540_b_h8_aa.jpg?w=960&h=540" class="card-img-top" alt="Partner Track">
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Devil in Ohio"
+                 data-description="Una psiquiatra acoge a una misteriosa fugitiva de una secta..."
+                 data-duration="1 temporada"
+                 data-background="https://www.releasestv.com/wp-content/uploads/2022/08/dio1.jpg"
+                 data-trailer="https://www.youtube.com/embed/94M1gj1fZQE?si=PXHhTzyL_S-dgE7b">
+                <div class="card bg-dark border-0">
+                    <img src="https://www.releasestv.com/wp-content/uploads/2022/08/dio1.jpg" class="card-img-top" alt="Devil in Ohio">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">TOP 10</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="The Crown"
+                 data-description="Un drama que narra la historia..."
+                 data-duration="6 temporadas"
+                 data-background="https://ntvb.tmsimg.com/assets/p14453812_b_h11_aa.jpg"
+                 data-trailer="https://www.youtube.com/embed/JWtnJjn6ng0?si=tIcGETSPZR5E76dm">
+                <div class="card bg-dark border-0">
+                    <img src="https://ntvb.tmsimg.com/assets/p14453812_b_h11_aa.jpg" class="card-img-top" alt="The Crown">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">TOP 10</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Call the Midwife"
+                 data-description="Las aventuras de un grupo de parteras..."
+                 data-duration="12 temporadas"
+                 data-background="https://wallpapercave.com/wp/wp9615518.jpg"
+                 data-trailer="https://www.youtube.com/embed/lZFc66yhfMA?si=ilXr-TAmwxR0cbtN">
+                <div class="card bg-dark border-0">
+                    <img src="https://wallpapercave.com/wp/wp9615518.jpg" class="card-img-top" alt="Call the Midwife">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">NUEVA TEMPORADA</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="In the Dark"
+                 data-description="Una joven ciega e independiente..."
+                 data-duration="4 temporadas"
+                 data-background="https://th.bing.com/th/id/OIP.b7fv40HW3FTVq0tDWBvemQHaEK?cb=iwc2&rs=1&pid=ImgDetMain"
+                 data-trailer="https://www.youtube.com/embed/14FGjkrrXFk?si=AyJTALxaC9XA81Lr">
+                <div class="card bg-dark border-0">
+                    <img src="https://th.bing.com/th/id/OIP.b7fv40HW3FTVq0tDWBvemQHaEK?cb=iwc2&rs=1&pid=ImgDetMain" class="card-img-top" alt="In the Dark">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">NUEVA TEMPORADA</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="Peaky Blinders"
+                 data-description="Una saga familiar de gánsteres..."
+                 data-duration="6 temporadas"
+                 data-background="https://mir-s3-cdn-cf.behance.net/project_modules/1400/3d32ae128494953.61571977bd8da.jpg"
+                 data-trailer="https://www.youtube.com/embed/oVzVdvGIC7U?si=hog12VF8H4IwRPDw">
+                <div class="card bg-dark border-0">
+                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/3d32ae128494953.61571977bd8da.jpg" class="card-img-top" alt="Peaky Blinders">
+                    <div class="badge badge-danger position-absolute" style="top: 10px; left: 10px;">TOP 10</div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="After Life"
+                 data-description="Un hombre afronta la muerte de su esposa..."
+                 data-duration="3 temporadas"
+                 data-background="https://ntvb.tmsimg.com/assets/p17998473_b_h13_aa.jpg"
+                 data-trailer="https://www.youtube.com/embed/zEeqaUxRGB0?si=BAyClKrspy2PJBQN">
+                <div class="card bg-dark border-0">
+                    <img src="https://ntvb.tmsimg.com/assets/p17998473_b_h13_aa.jpg" class="card-img-top" alt="After Life">
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 miniature gallery-item"
+                 data-title="The Undoing"
+                 data-description="La vida de una exitosa terapeuta..."
+                 data-duration="1 temporada"
+                 data-background="https://th.bing.com/th/id/R.4a4126e2f37e87927de14fc1cd9d4204?rik=ySHU3UfnL%2bNL9Q&pid=ImgRaw&r=0"
+                 data-trailer="https://www.youtube.com/embed/Bm22NjicUVI?si=IJ-2kM_z8OR0ApFT">
+                <div class="card bg-dark border-0">
+                    <img src="https://th.bing.com/th/id/R.4a4126e2f37e87927de14fc1cd9d4204?rik=ySHU3UfnL%2bNL9Q&pid=ImgRaw&r=0" class="card-img-top" alt="The Undoing">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
