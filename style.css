@@ -1,9 +1,9 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #141414; /* Fondo oscuro como Netflix */
-    color: #fff; /* Texto blanco */
-    padding-top: 56px; /* Ajuste para el header fijo de Bootstrap */
+    background-color: #141414; /* fondo oscuro como Netflix */
+    color: #fff; /* Txto blanco */
+    padding-top: 56px; /* ajuste para el header fijo de Bootstrap */
 }
 
 header {
